@@ -14,5 +14,4 @@ fun main() {
 
     estoque.efetuarVenda(2)
     estoque.efetuarVenda(6)
-
 }
