@@ -5,9 +5,17 @@ class Estoque {
     var listaColecoes = mutableMapOf<Int, Colecao>()
 
     fun consultarLivro(codigo: Int) {
-        if (listaLivro.containsKey(codigo)) println(listaLivro.get(codigo))
-        if (listaColecoes.containsKey(codigo)) println(listaColecoes.get(codigo))
-        else println("Livro ou coleção não encontrado ")
+        if (listaLivro.containsKey(codigo)) {
+            println(listaLivro.get(codigo))
+            return
+        }
+
+        if (listaColecoes.containsKey(codigo)) {
+            println(listaColecoes.get(codigo))
+            return
+        }
+
+        println("Livro ou coleção não encontrado ")
     }
 
     fun cadastrarLivro(livro: Livro) {
@@ -18,11 +26,16 @@ class Estoque {
         if (listaLivro.containsKey(codigo)) {
             if (listaLivro.get(codigo)?.qtd == 0) println("Estoque esgotado.")
             else listaLivro.get(codigo)?.qtd?.minus(1)
+            return
         }
+
         if (listaColecoes.containsKey(codigo)) {
             if (listaColecoes.get(codigo)?.qtd == 0) println("Estoque esgotado.")
             else listaColecoes.get(codigo)?.qtd?.minus(1)
-        } else println("Produto não cadastrado.")
+            return
+        }
+
+        println("Produto não cadastrado.")
     }
 
 }
