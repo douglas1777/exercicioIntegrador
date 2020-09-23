@@ -1,7 +1,7 @@
 package main.kotlin
 
-data class Colecao (val preco: Double,
+data class Colecao (val preco: Double = 1.0,
                  val codigo: Int,
-                 val qtd: Int,
-                 val descricao: String,
+                 val qtd: Int = 1,
+                 val descricao: String = "DDD",
                  val livros: MutableList<Livro>)
